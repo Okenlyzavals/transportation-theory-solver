@@ -4,6 +4,7 @@ import org.softsmithy.lib.swing.JRealNumberField;
 
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.math.BigDecimal;
 
 public class JDecimalField extends JRealNumberField {
@@ -12,9 +13,9 @@ public class JDecimalField extends JRealNumberField {
         addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
-                super.focusGained(e);
-                if (getBigDecimalValue().equals(getMinimumBigDecimalValue())) {
-                    setText("");
+                if (getBigDecimalValue().equals(getMinimumBigDecimalValue())
+                        || getBigDecimalValue().equals(BigDecimal.ZERO)) {
+                    JDecimalField.this.setText("");
                 }
             }
         });

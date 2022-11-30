@@ -3,11 +3,10 @@ package by.bntu.baranouski.gui.swing;
 import by.bntu.baranouski.gui.swing.panels.LeftInputPanel;
 import by.bntu.baranouski.gui.swing.panels.RightOutputPanel;
 import by.bntu.baranouski.gui.swing.panels.StateInputPanel;
-import by.bntu.baranouski.model.TransportationState;
-import by.bntu.baranouski.model.dto.SolutionDto;
-import by.bntu.baranouski.service.ImagePrinterService;
+import by.bntu.baranouski.core.model.TransportationState;
+import by.bntu.baranouski.core.model.dto.SolutionDto;
+import by.bntu.baranouski.core.service.ImagePrinterService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.tools.javac.Main;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -390,6 +389,5 @@ public class MainFrame extends JFrame {
                 }
             }
         }
-
     }
 }

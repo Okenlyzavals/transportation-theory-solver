@@ -1,6 +1,6 @@
-package by.bntu.baranouski.model.dto;
+package by.bntu.baranouski.core.model.dto;
 
-import by.bntu.baranouski.model.TransportationState;
+import by.bntu.baranouski.core.model.TransportationState;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;

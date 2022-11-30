@@ -1,8 +1,7 @@
 package by.bntu.baranouski.gui.swing.panels;
 
-import by.bntu.baranouski.model.TransportationState;
-import by.bntu.baranouski.model.dto.SolutionDto;
-import com.google.common.collect.Lists;
+import by.bntu.baranouski.core.model.TransportationState;
+import by.bntu.baranouski.core.model.dto.SolutionDto;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -184,7 +183,7 @@ public class RightOutputPanel extends JTabbedPane {
 
         public RealTimePanel(List<TransportationState> transportationStates) {
             super();
-            RightOutputPanel.this.addChangeListener(e->playing=!playing);
+            RightOutputPanel.this.addChangeListener(e->playing = false);
             this.statesToDemonstrate = transportationStates;
             setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
             wrapper.setBorder(BorderFactory.createTitledBorder("Solution result:"));
@@ -221,7 +220,7 @@ public class RightOutputPanel extends JTabbedPane {
                 }
                 wrapper.removeAll();
                 wrapper.add(new JScrollPane(new StateDemonstrationPanel(statesToDemonstrate.get(statesToDemonstrate.size()-1))));
-                wrapper.setBorder(BorderFactory.createTitledBorder("Final state:"));
+                wrapper.setBorder(BorderFactory.createTitledBorder("Solution result:"));
                 wrapper.revalidate();
                 wrapper.repaint();
             });
@@ -266,7 +265,9 @@ public class RightOutputPanel extends JTabbedPane {
         int pageSize;
 
         static <T> PagedList<T> of(List<T> list, int size){
-            var pages = Lists.partition(list, size);
+            var pages = IntStream.iterate(0, i -> i < list.size(), i -> i + size)
+                    .mapToObj(i -> list.subList(i, Math.min(i + size, list.size())))
+                    .toList();
             return new PagedList<>(pages, pages.size(), size);
         }
 

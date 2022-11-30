@@ -1,4 +1,4 @@
-package by.bntu.baranouski.model;
+package by.bntu.baranouski.core.model;
 
 import lombok.*;
 import lombok.experimental.Accessors;

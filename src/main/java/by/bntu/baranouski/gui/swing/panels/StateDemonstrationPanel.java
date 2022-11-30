@@ -1,7 +1,7 @@
 package by.bntu.baranouski.gui.swing.panels;
 
+import by.bntu.baranouski.core.model.*;
 import by.bntu.baranouski.gui.swing.panels.util.GridBagHelper;
-import by.bntu.baranouski.model.*;
 import lombok.Getter;
 
 import javax.swing.*;

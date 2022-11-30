@@ -103,7 +103,7 @@ public class SplashScreen extends JFrame {
         studentDataPanel.add(new JLabel("Baranouski Yauheni Kirylavich"));
         studentDataPanel.add(new JLabel("\n"));
         studentDataPanel.add(new JLabel("Instructor: c.t.s., docent"));
-        studentDataPanel.add(new JLabel("Kovalyova Iryna Lvovna"));
+        studentDataPanel.add(new JLabel("Kovaleva Irina Lvovna"));
         studentDataWrapper.add(studentDataPanel);
 
         helper.nextRow().nextCell().setInsets(0,5,0,10);

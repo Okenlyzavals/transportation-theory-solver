@@ -1,14 +1,17 @@
 package by.bntu.baranouski.gui.swing.panels;
 
+import by.bntu.baranouski.core.model.Consumer;
+import by.bntu.baranouski.core.model.Producer;
+import by.bntu.baranouski.core.model.RouteNode;
+import by.bntu.baranouski.core.model.TransportationState;
 import by.bntu.baranouski.gui.swing.panels.util.GridBagHelper;
 import by.bntu.baranouski.gui.swing.panels.util.JDecimalField;
-import by.bntu.baranouski.model.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.swing.*;
 import java.awt.*;
-import java.text.DecimalFormat;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -180,6 +183,7 @@ public class StateInputPanel extends JPanel{
         public EntityInputFieldTuple(T entity){
             this.entity = entity;
             inputField = new JDecimalField();
+            inputField.setMinimumBigDecimalValue(BigDecimal.ZERO);
             inputField.setHorizontalAlignment(CENTER);
             inputField.setEditable(true);
             inputField.setColumns(5);

@@ -1,6 +1,6 @@
-package by.bntu.baranouski.model.util;
+package by.bntu.baranouski.core.model.util;
 
-import by.bntu.baranouski.model.Potential;
+import by.bntu.baranouski.core.model.Potential;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

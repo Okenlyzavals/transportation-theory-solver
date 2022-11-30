@@ -1,10 +1,10 @@
-package by.bntu.baranouski.service;
+package by.bntu.baranouski.core.service;
 
-import by.bntu.baranouski.model.Consumer;
-import by.bntu.baranouski.model.Producer;
-import by.bntu.baranouski.model.RouteNode;
-import by.bntu.baranouski.model.TransportationState;
-import by.bntu.baranouski.solver.InitialPhaseSolver;
+import by.bntu.baranouski.core.model.Consumer;
+import by.bntu.baranouski.core.model.Producer;
+import by.bntu.baranouski.core.model.RouteNode;
+import by.bntu.baranouski.core.model.TransportationState;
+import by.bntu.baranouski.core.solver.InitialPhaseSolver;
 
 import java.math.BigDecimal;
 import java.util.*;

@@ -1,4 +1,4 @@
-package by.bntu.baranouski.model.util;
+package by.bntu.baranouski.core.model.util;
 
 import java.util.Collection;
 import java.util.LinkedList;

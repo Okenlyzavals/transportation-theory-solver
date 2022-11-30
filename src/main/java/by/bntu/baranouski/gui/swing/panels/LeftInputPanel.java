@@ -1,9 +1,9 @@
 package by.bntu.baranouski.gui.swing.panels;
 
-import by.bntu.baranouski.controller.TransportationController;
+import by.bntu.baranouski.core.controller.TransportationController;
 import by.bntu.baranouski.gui.swing.InitFrame;
 import by.bntu.baranouski.gui.swing.MainFrame;
-import by.bntu.baranouski.model.dto.SolutionDto;
+import by.bntu.baranouski.core.model.dto.SolutionDto;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +14,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.UUID;
 
-import static by.bntu.baranouski.controller.TransportationController.InitialSolveMethod.*;
+import static by.bntu.baranouski.core.controller.TransportationController.InitialSolveMethod.*;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class LeftInputPanel extends JSplitPane {

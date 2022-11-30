@@ -1,14 +1,14 @@
 package by.bntu.baranouski.gui.swing.panels;
 
 import by.bntu.baranouski.gui.swing.panels.util.JDecimalField;
-import by.bntu.baranouski.model.RouteNode;
+import by.bntu.baranouski.core.model.RouteNode;
 import lombok.Getter;
 
 import javax.swing.*;
 import java.awt.*;
 import java.text.DecimalFormat;
 
-import static by.bntu.baranouski.model.RouteNode.OptimizationValue.PLUS;
+import static by.bntu.baranouski.core.model.RouteNode.OptimizationValue.PLUS;
 
 @Getter
 public class RouteNodePanel extends JPanel {

@@ -1,4 +1,4 @@
-package by.bntu.baranouski.service;
+package by.bntu.baranouski.core.service;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

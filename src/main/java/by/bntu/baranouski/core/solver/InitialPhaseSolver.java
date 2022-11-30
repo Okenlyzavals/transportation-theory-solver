@@ -1,9 +1,9 @@
-package by.bntu.baranouski.solver;
+package by.bntu.baranouski.core.solver;
 
-import by.bntu.baranouski.model.Consumer;
-import by.bntu.baranouski.model.Producer;
-import by.bntu.baranouski.model.RouteNode;
-import by.bntu.baranouski.model.TransportationState;
+import by.bntu.baranouski.core.model.Consumer;
+import by.bntu.baranouski.core.model.Producer;
+import by.bntu.baranouski.core.model.RouteNode;
+import by.bntu.baranouski.core.model.TransportationState;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

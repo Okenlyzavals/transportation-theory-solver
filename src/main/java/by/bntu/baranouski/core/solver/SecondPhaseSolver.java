@@ -1,8 +1,11 @@
-package by.bntu.baranouski.solver;
+package by.bntu.baranouski.core.solver;
 
-import by.bntu.baranouski.model.*;
-import by.bntu.baranouski.model.util.KineticPriorityQueue;
-import by.bntu.baranouski.model.util.PotentialEquationWrapper;
+import by.bntu.baranouski.core.model.Cycle;
+import by.bntu.baranouski.core.model.Potential;
+import by.bntu.baranouski.core.model.RouteNode;
+import by.bntu.baranouski.core.model.TransportationState;
+import by.bntu.baranouski.core.model.util.KineticPriorityQueue;
+import by.bntu.baranouski.core.model.util.PotentialEquationWrapper;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -10,8 +13,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-import static by.bntu.baranouski.model.RouteNode.OptimizationValue.MINUS;
-import static by.bntu.baranouski.model.RouteNode.OptimizationValue.PLUS;
 import static java.lang.Math.*;
 
 public class SecondPhaseSolver {
@@ -182,7 +183,7 @@ public class SecondPhaseSolver {
 
         for (int i = 0, plus = 1; i<nextState.cycle().size()-1; i++, plus = -plus){
             nextState.cycle().get(i)
-                    .setOpt(plus > 0 ? PLUS : MINUS);
+                    .setOpt(plus > 0 ? RouteNode.OptimizationValue.PLUS : RouteNode.OptimizationValue.MINUS);
         }
         return nextState;
     }
@@ -191,10 +192,10 @@ public class SecondPhaseSolver {
         TransportationState nextState = initialState.copy(true);
         nextState.setComment("building redistributed state");
         var minNodeTaken = nextState.cycle().stream()
-                .filter(node->node.getOpt().equals(MINUS))
+                .filter(node->node.getOpt().equals(RouteNode.OptimizationValue.MINUS))
                 .min(Comparator.comparing(RouteNode::getTaken)).orElseThrow().getTaken();
         for (int i = 0; i<nextState.cycle().size()-1; i++){
-            if (nextState.cycle().get(i).getOpt().equals(PLUS)){
+            if (nextState.cycle().get(i).getOpt().equals(RouteNode.OptimizationValue.PLUS)){
                 nextState.cycle().get(i).setTaken(
                         nextState.cycle().get(i).getTaken() == null
                                 ? minNodeTaken
@@ -207,7 +208,7 @@ public class SecondPhaseSolver {
         return nextState;
     }
 
-    public Cycle buildCycle(Cycle cycle, List<RouteNode> nodePool){
+    private Cycle buildCycle(Cycle cycle, List<RouteNode> nodePool){
         if(Thread.currentThread().isInterrupted()) return cycle;
         if (cycle.size()>3 && cycle.get(0).equals(cycle.get(cycle.size()-1))){
             return cycle;
@@ -311,7 +312,6 @@ public class SecondPhaseSolver {
                 return true;
             }
         }
-
         return false;
     }
 }
